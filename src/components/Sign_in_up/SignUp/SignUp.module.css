@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.signUp{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    background-image: linear-gradient(#71B4D6, #1A7DFF);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    justify-items: center;
+}
+
+.logoText{
+    margin-top: 50px;
+}
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 500px;
+    height: 600px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.form h2{
+    margin: 0;
+    margin-top: 70px;
+    margin-bottom: 10px;
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #006FFF;
+    align-self: center;
+}
+
+.form img{
+    align-self: center;
+    margin: 0;
+    width: 70px;
+    height: 5px;
+    margin-bottom: 50px;
+}
+
+.name, .email, .password{
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    background-color: #E7E7E7;
+    width: 380px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.email{
+    margin-top: 20px;
+}
+
+.password{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.name img, .email img, .password img{
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.name input, .email input, .password input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #A5A5A5;
+}
+
+.name input:focus, .email input:focus, .password input:focus{
+    outline: none;
+    border: none;
+}
+
+.name input::placeholder, .email input::placeholder, .password input::placeholder{
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #A5A5A5;
+}
+
+.btnWrapper{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    gap: 20px;
+    margin-top: 82px;
+}
+
+.btnWrapper button{
+    width: 180px;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    align-items: center;
+}
+
+.login{
+    background-color: #E7E7E7;
+}
+
+.loginL{
+    text-decoration: none;
+}
+.login p{
+    margin: 0;
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #A5A5A5;
+    align-self: center;
+}
+
+.reg{
+    background-color: #006FFF;
+}
+
+.regL{
+    text-decoration: none;
+}
+.reg p{
+    margin: 0;
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    align-self: center;
+}
+
+.lightSwitch{
+    margin-top: 70px;
+    margin-bottom: 87px
+}
+
+.cloud1{
+    position: absolute;
+    right: 0;
+    top: 33px;
+}
+
+.cloud2{
+    position: absolute;
+    left: 0;
+    top: 156px;
+}
+
+.cloud3{
+    position: absolute;
+    left: 0;
+    top: 886px;
+}
+
+.cloud4{
+    position: absolute;
+    right: 0;
+    top: 841px;
+}

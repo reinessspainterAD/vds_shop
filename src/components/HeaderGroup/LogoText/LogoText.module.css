@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.logoText{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logoText h2{
+    margin-right: 10px;
+    font-family: "Roboto", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+}
+
+.logoText img{
+    margin-right: 20px;
+}
+
+.slogan{
+    font-family: "Roboto", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+}
+
+
+

@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.qaaContainer{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.qaaQuestion{
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.qaaAnswer{
+    font-family: "Roboto", serif;
+    font-weight: 300;
+    font-size: 24px;
+    text-align: justify;
+    text-indent: 75px;
+}
+
+.qaaAnswerList{
+    list-style: circle;
+    padding-left: 95px;
+
+}
+
+.qaaAnswerList li{
+    font-family: "Roboto", serif;
+    font-weight: 300;
+    font-size: 24px;
+    text-align: justify;
+    /* text-indent: 75px; */
+}
+
+.qaaItem{
+    margin-bottom: 50px;
+}

@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+.logo{
+    display: flex;
+    flex-direction: column;
+}
+
+.logo div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+}
+
+.logo div p{
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 48px;
+    margin: 0;
+}
+
+
+.logo div img{
+    margin-left: 20px;
+}
+
+.logo p{
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 11px;
+    margin: 0;
+    margin-top: 5px;
+}

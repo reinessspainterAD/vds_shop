@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.reviewListContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    /* overflow: hidden;  */
+    margin-bottom: 80px;
+}
+
+.scrollBtnLeft{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 190px;
+}
+
+.scrollBtnRight{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 190px;
+}
+
+.reviewList {
+    display: flex;
+    overflow: hidden; /* Скрываем горизонтальную прокрутку */
+    scroll-behavior: smooth; /* Плавная прокрутка */
+}
+
+.reviewList > .reviewBlock {
+    flex: 0 0 auto; /* Запрещаем сжатие и растяжение блоков */
+    width: calc(100% - 200px); /* Ширина блока минус отступы */
+    margin-left: 100px; /* Отступ слева */
+    margin-right: 100px; /* Отступ справа */
+}
+
+.reviewBlock{
+    display: flex;
+    flex-direction: row;
+    gap: 44px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.reviewCard{
+    display: block;
+    background-color: white;
+    width: 700px;
+    height: 400px;
+    border-radius: 20px;
+}
+
+.reviewCard p{
+    font-family: "Roboto", serif;
+    height: 80px;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: justify;
+    text-indent: 40;
+    margin-top: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.helpme{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.helpme div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ava{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    background-color: antiquewhite;
+    margin-left: 40px;
+}
+
+.ava img{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+}
+
+.helpme h3{
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: black;
+    margin: 0;
+    margin-left: 40px;
+}
+
+.helpme p{
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #A5A5A5;
+    margin: 0;
+    margin-left: 40px;
+    margin-top: 10px;
+}

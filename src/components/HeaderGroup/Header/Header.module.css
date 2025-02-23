@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoText{
+    margin-left: 200px;
+}
+
+.rightSide {
+    margin-right: 200px;
+    display: flex;
+    gap: 20px;
+}

@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.howItWorks{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    justify-content: space-around;
+}
+
+.howItWorks h2{
+    margin: 0%;
+    margin-top: 100px;
+    margin-left: 300px;
+    font-family: "Roboto Condensed", serif;
+    font-weight: 400;
+    font-size: 48px;
+    color: white;
+}
+
+.leftSide{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+}
+
+.leftSide img{
+    margin-left: 110px;
+}
+
+.leftSide p{
+    font-family: "Roboto Flex", serif;
+    font-weight: 400;
+    font-size: 40px;
+    text-align: right;
+    margin-left: 60px;
+    color: white;
+}
+
+.rightSide{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+}
+
+.rightSide p{
+    font-family: "Roboto Flex", serif;
+    font-weight: 400;
+    font-size: 40px;
+    text-align: left;
+    margin-left: 220px;
+    margin-right: 80px;
+    color: white;
+}

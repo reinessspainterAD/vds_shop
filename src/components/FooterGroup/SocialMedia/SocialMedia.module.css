@@ -1,0 +1,7 @@
+.socialMedia{
+    display: flex;
+    flex-direction: row;
+    width: 210px;
+    justify-items: center;
+    justify-content: space-between;
+}
