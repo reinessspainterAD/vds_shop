@@ -11,7 +11,6 @@ function SignIn(){
     const [password, setPassword] = useState('')
 
     async function registerUser(event){
-        console.log("sads")
         event.preventDefault()
         try{
             const response = await fetch('http://localhost:1337/api/register', {

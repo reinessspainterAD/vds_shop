@@ -3,6 +3,7 @@ import Landing from './components/Landing/BodyGroup/Landing/Landing.jsx'
 import SignIn from './components/Sign_in_up/SignIn/SignIn.jsx'
 import SignUp from './components/Sign_in_up/SignUp/SignUp.jsx'
 import Dashboard from './components/Dashboard/Dashboard.jsx'
+import ProtectedRoute from './api/ProtectedRoute.jsx'
 import './App.css'
 
 function App() {
@@ -14,8 +15,22 @@ function App() {
           <Route path='/' element={<Landing/>}></Route>
           <Route path='/register' element={<SignUp />}></Route>
           <Route path='/login' element={<SignIn />}></Route>
-          <Route path='/dashboard'element={<Dashboard/>}></Route>
-          <Route path='/configurator'element={<></>}></Route>
+          <Route 
+            path='/dashboard'
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }>
+          </Route>
+          <Route
+            path='/configurator'
+            element={
+              <ProtectedRoute>
+                <></>
+              </ProtectedRoute>
+            }>
+          </Route>
         </Routes>
       </BrowserRouter>
       {/* <Header />

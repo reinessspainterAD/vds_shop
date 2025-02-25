@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.dashboard{
+    background-image: linear-gradient(#1A7DFF, #5952A0);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.lightswap{
+    margin-left: auto;
+}
+
+.body{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-left: 100px;
+}
+
+.userbox{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    width: 400px;
+    height: 400px;
+}
+
+.userlogo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    margin-left: 35px;
+}
+
+.userlogo img{
+    width: 150px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #1A7DFF;
+}
+
+.userlogo div{
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    justify-content: center;
+    width: 100%;
+}
+
+.userlogo div h2, .userlogo div p{
+    margin: 0;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #505050;
+}
+
+.userlogo div p{
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 35px;
+}
+
+.navbar button{
+    width: 75%;
+    text-align: left;
+    margin-top: 20px;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+    color: #505050;
+}
+
+.navbar button.active{
+    color: #006FFF;
+    font-weight: bold;
+}
+
+.configurator{
+    display: flex;
+    flex-direction: row;
+    background-color: #3982E0;
+    border-radius: 10px;
+    width: 400px;
+    height: 100px;
+    justify-items: center;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 30px;
+}
+
+.configurator img{
+    width: 95px;
+    height: 45px;
+    margin-left: 55px;
+    margin-right: 20px;
+}
+
+.configurator p{
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: white;
+    margin-right: 55px;
+}
+/* 
+.configurator:hover{
+    background-color: rgb(255, 255, 255);
+}
+
+.configurator:hover p{
+    color: #4e0eff;
+} */
+
+
+.rightside{
+    margin-left: 30px;
+    background-color: white;
+    border-radius: 5px;
+    width: 71%;
+    height: 70vh;
+}
