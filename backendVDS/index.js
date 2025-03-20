@@ -177,9 +177,15 @@ app.post("/api/vm/create", verifyToken, async (req, res) => {
 
 // Получение списка ВМ пользователя
 app.get('/api/vm/list', verifyToken, async (req, res) => {
+    try{
     const user = await User.findOne({ email: req.user.email });
     const vms = await VM.find({ userId: user._id });
-    res.json({ status: 'ok', vms });
+    console.log("Найденные ВМ:", vms);
+    return res.json({ status: 'ok', vms });
+    }catch(error){
+        res.status(500).json({ error: error.message})
+    }
+    
 });
 
 // Получение статуса ВМ
@@ -187,7 +193,15 @@ app.get('/api/vm/status/:vmid', verifyToken, async (req, res) => {
     try {
         const { vmid } = req.params;
         const status = await proxmoxRequest('GET', `/nodes/pve/qemu/${vmid}/status/current`);
-        res.json({ status: 'ok', data: status });
+        const {cpu, mem, maxmem, disk, maxdisk} = status.data
+
+        const formattedMetrics = {
+            cpu: (cpu * 100).toFixed(2),
+            ram: ((mem / maxmem) * 100).toFixed(2),
+            disk: ((disk / maxdisk) * 100).toFixed(2)
+        }
+
+        res.json({ status: 'ok', data: formattedMetrics });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -215,6 +229,21 @@ app.delete('/api/vm/delete/:vmid', verifyToken, async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
+// Получение VNC-конфигурации для терминала
+app.get('/api/vm/vnc/:vmid', verifyToken, async(req, res) =>{
+    try{
+        const { vmid } = req.params;
+        const vncResponse = await proxmoxRequest('POST', `/nodes/pve/qemu/${vmid}/vncproxy`);
+        if (!vncResponse.data) {
+            return res.status(500).json({ error: 'Не удалось получить VNC-конфигурацию' });
+        }
+        return res.json({ status: 'ok', data: vncResponse.data });
+    }catch(error){
+        res.status(500).json({ error: error.message})
+    }
+})
+
 
 app.listen(1337, () =>{
     console.log('SERVER started on 1337')

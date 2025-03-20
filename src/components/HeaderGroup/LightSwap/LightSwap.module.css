@@ -1,3 +1,29 @@
+:root{
+    --bg-color: linear-gradient(#1A7DFF, #6832fd);
+    --text-color: black;
+}
+  
+  .dark-mode {
+    --bg-color: linear-gradient(#1050a4, #4320a0);
+    --text-color: white;
+}
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+  
+  .theme-button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
 .lightSwap button{
     width: 50px;
     height: 50px;

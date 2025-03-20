@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 .dashboard{
-    background-image: linear-gradient(#1A7DFF, #5952A0);
+    background-image: linear-gradient(#1A7DFF, #6832fd);
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -15,7 +15,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 25px;
     margin-left: 100px;
     margin-right: 100px;
 }
@@ -102,29 +102,30 @@
 .configurator{
     display: flex;
     flex-direction: row;
-    background-color: #3982E0;
+    background-color: #006FFF;
+    border: 2px solid white;
     border-radius: 10px;
-    width: 400px;
-    height: 100px;
+    width: 396px;
+    height: 50px;
+    justify-content: center;
     justify-items: center;
     align-items: center;
     text-decoration: none;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
-.configurator img{
-    width: 95px;
+/* .configurator img{
+    width: 45px;
     height: 45px;
     margin-left: 55px;
     margin-right: 20px;
-}
+} */
 
 .configurator p{
     font-family: "Roboto", serif;
     font-weight: 400;
-    font-size: 26px;
+    font-size: 22px;
     color: white;
-    margin-right: 55px;
 }
 /* 
 .configurator:hover{
@@ -141,5 +142,5 @@
     background-color: white;
     border-radius: 5px;
     width: 1290px;
-    height: 820px;
+    height: 75vh;
 }

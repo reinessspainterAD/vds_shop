@@ -7,6 +7,7 @@ import BuyHistory from './BuyHistory/BuyHistory.jsx'
 import Settings from './Settings/Settings.jsx'
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import userLogo from '../../assets/user1.svg'
 
 
 function Dashboard(){
@@ -21,6 +22,12 @@ function Dashboard(){
 
     const handleMenuClick = (componentName) => {
         setCurrentComponent(componentName)
+    }
+
+    const handleLogout = () => {
+        localStorage.removeItem('token') // Удаляем токен
+        console.log("Токен удален, перенаправление на login...") // Логируем удаление
+        window.location.href = '/login';
     }
 
     const getUserData = async () => {
@@ -61,11 +68,6 @@ function Dashboard(){
         </button>
     );
 
-    // const Logout = () =>{
-    //     localStorage.removeItem('token')
-    //     const navigate = useNavigate()
-    //     navigate('/login')
-    // }
 
     return(
         <section className={styles.dashboard}>
@@ -78,7 +80,7 @@ function Dashboard(){
                 <div className={styles.leftside}>
                     <div className={styles.userbox}>
                         <div className={styles.userlogo}>
-                            <img src='src/assets/user1.svg' alt="userphoto" />
+                            <img src={userLogo} alt="userphoto" />
                             <div>
                                 <h2>{userData.name}</h2>
                                 <p>{userData.email}</p>
@@ -86,13 +88,13 @@ function Dashboard(){
                         </div>
                         <nav className={styles.navbar}>
                             {renderMenuButton('activeServers', 'Активные серверы')}
-                            {renderMenuButton('buyHistory', 'История покупок')}
-                            {renderMenuButton('settings', 'Настройки')}
-                            <button>Выход</button>
+                            {/* {renderMenuButton('buyHistory', 'История покупок')}
+                            {renderMenuButton('settings', 'Настройки')} */}
+                            <button onClick={handleLogout}>Выход</button>
                         </nav>
                     </div>
-                    <Link className={styles.configurator}>
-                        <img src="src/assets/confg.svg" alt="confg" />
+                    <Link className={styles.configurator} to={'/configurator'}>
+                        {/* <img src="src/assets/confg.svg" alt="confg" /> */}
                         <p>Конфигуратор</p>
                     </Link>
                 </div>

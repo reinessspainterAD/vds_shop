@@ -37,26 +37,6 @@ async function proxmoxRequest(method, path, data) {
     }
 }
 
-// Создание ВМ
-async function createVM(vmConfig) {
-    return proxmoxRequest('POST', `/nodes/pve/qemu`, vmConfig);
-}
-
-// Получение статуса ВМ
-async function getVMStatus(vmid) {
-    return proxmoxRequest('GET', `/nodes/pve/qemu/${vmid}/status/current`);
-}
-
-// Остановка ВМ
-async function stopVM(vmid) {
-    return proxmoxRequest('POST', `/nodes/pve/qemu/${vmid}/status/stop`);
-}
-
-// Удаление ВМ
-async function deleteVM(vmid) {
-    return proxmoxRequest('DELETE', `/nodes/pve/qemu/${vmid}`);
-}
-
 module.exports = {
     // createVM,
     // getVMStatus,

@@ -1,10 +1,22 @@
+:root{
+    --bg-color: linear-gradient(#1A7DFF, #6832fd);
+    --text-color: black;
+}
+
+.dark-mode {
+    --bg-color: linear-gradient(#1050a4, #4320a0);
+    --text-color: white;
+}
+
 body{
     margin: 0;
     padding: 0;/* 
     overflow: hidden; */
     /* position: relative; */
-    background-image: linear-gradient(#71B4D6, #1A7DFF);
+    /* background-image: linear-gradient(#1A7DFF, #6832fd); */
 }
+
+
 
 .container{
     /* position: relative; */
