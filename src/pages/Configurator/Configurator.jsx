@@ -1,6 +1,5 @@
 import styles from './Configurator.module.css'
-import LogoText from '../HeaderGroup/LogoText/LogoText.jsx'
-import LightSwap from '../HeaderGroup/LightSwap/LightSwap.jsx'
+import LogoText from '../../components/HeaderGroup/LogoText/LogoText.jsx'
 import home from '../../assets/home.svg'
 import React, { useState } from 'react';
 import Box from '@mui/material/Box';
@@ -9,7 +8,7 @@ import debian from '../../assets/debian.svg'
 import ubuntu from '../../assets/ubuntu.svg'
 import winServer from '../../assets/winserver.svg'
 import { useNavigate } from 'react-router-dom'
-import { mockVMs } from '../Dashboard/mockData.js';
+import { mockVMs } from '../../components/DashboardGroup/mockData.js';
 
 function Configurator(){
     const navigate = useNavigate()
@@ -59,7 +58,6 @@ function Configurator(){
             <div className={styles.header}>
                 <div className={styles.logoText}><LogoText/></div>
                 <div className={styles.leftheader}>
-                    <div className={styles.lightSwap}><LightSwap/></div>
                     <button onClick={() => navigate('/dashboard')}><img src={home} alt="home" /></button>
                 </div>
             </div>

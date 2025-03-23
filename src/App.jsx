@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Landing from './components/Landing/BodyGroup/Landing/Landing.jsx'
-import SignIn from './components/Sign_in_up/SignIn/SignIn.jsx'
-import SignUp from './components/Sign_in_up/SignUp/SignUp.jsx'
-import Dashboard from './components/Dashboard/Dashboard.jsx'
+import Landing from './pages/Landing/Landing.jsx'
+import SignIn from './pages/SignIn/SignIn.jsx'
+import SignUp from './pages/SignUp/SignUp.jsx'
+import Dashboard from './pages/Dashboard/Dashboard.jsx'
 import ProtectedRoute from './api/ProtectedRoute.jsx'
-import Server from './components/Dashboard/ActiveServers/Server/Server.jsx'
-import Configurator from './components/Configurator/Configurator.jsx'
+import Server from './components/DashboardGroup/ActiveServers/Server/Server.jsx'
+import Configurator from './pages/Configurator/Configurator.jsx'
 import './App.css'
 
 function App() {

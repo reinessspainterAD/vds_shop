@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-.signUp{
+.signIn{
     margin: 0;
     padding: 0;
     overflow: hidden;
     position: relative;
-    background-image: linear-gradient(#6832fd, #1A7DFF);
+    background-image: linear-gradient(#1A7DFF, #6832fd);
     width: 100%;
-    height: 100%;
+    height: 100vh;
     justify-content: center;
     justify-items: center;
 }
@@ -17,7 +17,6 @@
 .logoText{
     margin-top: 50px;
 }
-
 
 .form{
     display: flex;
@@ -48,7 +47,7 @@
     margin-bottom: 50px;
 }
 
-.name, .email, .password{
+.email, .password{
     align-self: center;
     display: flex;
     flex-direction: row;
@@ -58,16 +57,12 @@
     border-radius: 5px;
 }
 
-.email{
-    margin-top: 20px;
-}
-
 .password{
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.name img, .email img, .password img{
+.email img, .password img{
     margin: 0;
     width: 30px;
     height: 30px;
@@ -75,7 +70,7 @@
     margin-right: 20px;
 }
 
-.name input, .email input, .password input{
+.email input, .password input{
     width: 100%;
     background-color: transparent;
     border: none;
@@ -85,16 +80,42 @@
     color: #A5A5A5;
 }
 
-.name input:focus, .email input:focus, .password input:focus{
+.email input:focus, .password input:focus{
     outline: none;
     border: none;
 }
 
-.name input::placeholder, .email input::placeholder, .password input::placeholder{
+.email input::placeholder, .password input::placeholder{
     font-family: "Roboto", serif;
     font-weight: 500;
     font-size: 16px;
     color: #A5A5A5;
+}
+
+.form p{
+    font-family: "Roboto", serif;
+    font-weight: 200;
+    font-size: 12px;
+    color: black;
+    margin-left: 60px;
+}
+
+.link{
+    color: #006FFF;
+}
+
+.confirm{
+    width: 120px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    background-color: #006FFF;
+    margin-left: 320px;
+}
+
+.confirm img{
+    width: 50%;
+    height: 100%;
 }
 
 .btnWrapper{
@@ -116,7 +137,7 @@
 }
 
 .login{
-    background-color: #E7E7E7;
+    background-color: #006FFF;
 }
 
 .loginL{
@@ -127,12 +148,12 @@
     font-family: "Roboto", serif;
     font-weight: 700;
     font-size: 16px;
-    color: #A5A5A5;
+    color: white;
     align-self: center;
 }
 
 .reg{
-    background-color: #006FFF;
+    background-color: #E7E7E7;
 }
 
 .regL{
@@ -143,7 +164,7 @@
     font-family: "Roboto", serif;
     font-weight: 700;
     font-size: 16px;
-    color: white;
+    color: #A5A5A5;
     align-self: center;
 }
 

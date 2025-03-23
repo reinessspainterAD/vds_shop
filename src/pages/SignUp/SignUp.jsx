@@ -1,6 +1,5 @@
 import styles from './SignUp.module.css'
-import LogoText from '../../HeaderGroup/LogoText/LogoText.jsx'
-import LightSwap from '../../HeaderGroup/LightSwap/LightSwap.jsx'
+import LogoText from '../../components/HeaderGroup/LogoText/LogoText.jsx'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
@@ -85,7 +84,6 @@ function SignIn(){
                     </button>
                 </div>
             </form>
-            <div className={styles.lightSwitch}><LightSwap/></div>
         </section>
     )
 }

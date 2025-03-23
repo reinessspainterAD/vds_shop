@@ -1,5 +1,5 @@
 import styles from './QaA.module.css'
-import QaAItem from './QaAItem/QaAItem.jsx'
+import QaAItem from '../QaAItem/QaAItem.jsx'
 
 function QaA(){
     const qaa = [

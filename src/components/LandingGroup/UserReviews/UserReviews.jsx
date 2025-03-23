@@ -1,5 +1,5 @@
 import styles from './UserReviews.module.css'
-import ReviewList from './ReviewList/ReviewList.jsx'
+import ReviewList from '../ReviewList/ReviewList.jsx'
 
 function UserReviews(){
     const reviewsData = [

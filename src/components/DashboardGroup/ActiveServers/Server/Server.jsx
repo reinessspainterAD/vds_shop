@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom"
 // import RFB from "novnc-core"; //API
 // import axios from 'axios' //API
 import { mockVMs } from "../../mockData.js";
-import LightSwap from '../../../HeaderGroup/LightSwap/LightSwap.jsx'
 import Arrow from '../../../../assets/BackArrow.svg'
 import Start from '../../../../assets/play.svg'
 import Stop from '../../../../assets/stop.svg'
@@ -130,7 +129,6 @@ function Server (){
             <div className={styles.header}>
                 <button onClick={() => navigate('/dashboard/')} className={styles.backButton}><img src={Arrow} alt="arrow" /></button>
                 <h1>{server.name} ({server.vmId})</h1>
-                <div className={styles.lightSwap}><LightSwap /></div>
             </div>
             <div className={styles.params}>
                 <div>

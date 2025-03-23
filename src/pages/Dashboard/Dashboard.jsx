@@ -1,10 +1,9 @@
 import styles from './Dashboard.module.css'
-import LogoText from '../HeaderGroup/LogoText/LogoText.jsx'
-import LightSwap from '../HeaderGroup/LightSwap/LightSwap.jsx'
+import LogoText from '../../components/HeaderGroup/LogoText/LogoText.jsx'
 import apiClient from '../../api/apiClient.js'
-import ActiveServers from './ActiveServers/ActiveServers.jsx'
-import BuyHistory from './BuyHistory/BuyHistory.jsx'
-import Settings from './Settings/Settings.jsx'
+import ActiveServers from '../../components/DashboardGroup/ActiveServers/ActiveServers.jsx'
+import BuyHistory from '../../components/DashboardGroup/BuyHistory/BuyHistory.jsx'
+import Settings from '../../components/DashboardGroup/Settings/Settings.jsx'
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import userLogo from '../../assets/user1.svg'
@@ -73,7 +72,6 @@ function Dashboard(){
         <section className={styles.dashboard}>
             <div className={styles.header}>
                 <div className={styles.logotext}><LogoText /></div>
-                <div className={styles.lightswap}><LightSwap /></div>
             </div>
 
             <div className={styles.body}>

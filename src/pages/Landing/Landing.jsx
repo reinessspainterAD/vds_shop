@@ -1,10 +1,10 @@
 import styles from './Landing.module.css'
-import Header from '../../../HeaderGroup/Header/Header.jsx'
-import Banner from '../Banner/Banner.jsx'
-import HowItWorks from '../HowItWorks/HowItWorks.jsx'
-import QaA from '../QaA/QaA.jsx'
-import UserReviews from '../UserReviews/UserReviews.jsx'
-import Footer from '../../../FooterGroup/Footer/Footer.jsx'
+import Header from '../../components/HeaderGroup/Header/Header.jsx'
+import Banner from '../../components/LandingGroup/Banner/Banner.jsx'
+import HowItWorks from '../../components/LandingGroup/HowItWorks/HowItWorks.jsx'
+import QaA from '../../components/LandingGroup/QaA/QaA.jsx'
+import UserReviews from '../../components/LandingGroup/UserReviews/UserReviews.jsx'
+import Footer from '../../components/FooterGroup/Footer/Footer.jsx'
 
 function Body(){
     return(
