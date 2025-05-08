@@ -9,10 +9,7 @@ import Footer from '../../components/FooterGroup/Footer/Footer.jsx'
 function Body(){
     return(
         <section className={styles.body}>
-            <img className={styles.crl1} src="src/assets/circle1.svg" alt="circle1" />
-            <img className={styles.crl2} src="src/assets/circle2.svg" alt="circle2" />
-            <img className={styles.crl3} src="src/assets/circle3.svg" alt="circle3" />
-            <img className={styles.crl4} src="src/assets/circle4.svg" alt="circle4" />
+            <div className={styles.bg1}></div>
             <div className={styles.container}>
                 <Header />
                 <Banner />

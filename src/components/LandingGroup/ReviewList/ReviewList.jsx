@@ -1,37 +1,39 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styles from './ReviewList.module.css'
 
 function ReviewList({reviews}){
     const containerRef = useRef(null)
-    // Функция для прокрутки вправо
-    const scrollRight = () => {
-        if (containerRef.current) {
-            const block = containerRef.current.querySelector(`.${styles.reviewBlock}`);
-            const blockWidth = block.getBoundingClientRect().width + 
-                               parseFloat(window.getComputedStyle(block).marginLeft) +
-                               parseFloat(window.getComputedStyle(block).marginRight);
-            containerRef.current.scrollBy({ left: blockWidth, behavior: 'smooth' });
-        }
-    };
-    // Функция для прокрутки влево
-    const scrollLeft = () => {
-        if (containerRef.current) {
-            const block = containerRef.current.querySelector(`.${styles.reviewBlock}`);
-            const blockWidth = block.getBoundingClientRect().width + 
-                               parseFloat(window.getComputedStyle(block).marginLeft) +
-                               parseFloat(window.getComputedStyle(block).marginRight);
-            containerRef.current.scrollBy({ left: -blockWidth, behavior: 'smooth' });
-        }
-    };
+    const [isScrolling, setIsScrolling] = useState(false)
 
-    // Разделение отзывов на группы по 2 элемента
+    const scrollWithDelay = (direction) => {
+        if(isScrolling) return
+        setIsScrolling(true)
+
+        if (containerRef.current) {
+            const block = containerRef.current.querySelector(`.${styles.reviewBlock}`);
+            const blockWidth =
+                block.getBoundingClientRect().width +
+                parseFloat(window.getComputedStyle(block).marginLeft) +
+                parseFloat(window.getComputedStyle(block).marginRight);
+
+            const scrollValue = direction === "right" ? blockWidth : -blockWidth;
+
+            containerRef.current.scrollBy({ left: scrollValue, behavior: "smooth" });
+        }
+
+        // Сброс блокировки через 2 секунды
+        setTimeout(() => setIsScrolling(false), 1000);
+    }
+
+    const scrollLeft = () => scrollWithDelay("left");
+    const scrollRight = () => scrollWithDelay("right");
+
     const groupedReviews = []
-    for(let i =0; i<reviews.length; i+=2){
-        groupedReviews.push(reviews.slice(i, i+2))
+    for (let i = 0; i < reviews.length; i += 2) {
+        groupedReviews.push(reviews.slice(i, i + 2));
     }
 
     return(
-        
         <div className={styles.reviewListContainer}>
             {/* Кнопка влево */}
             <button className={styles.scrollBtnLeft} onClick={scrollLeft}>

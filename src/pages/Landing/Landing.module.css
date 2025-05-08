@@ -1,14 +1,5 @@
-:root{
-    --bg-color: linear-gradient(#1A7DFF, #6832fd);
-    --text-color: black;
-}
-
-.dark-mode {
-    --bg-color: linear-gradient(#1050a4, #4320a0);
-    --text-color: white;
-}
-
 body{
+    position: relative;
     margin: 0;
     padding: 0;/* 
     overflow: hidden; */
@@ -16,31 +7,8 @@ body{
     /* background-image: linear-gradient(#1A7DFF, #6832fd); */
 }
 
-
-
 .container{
     /* position: relative; */
     z-index: 1;
 }
 
-.crl1{
-    width: 250px;
-    position: absolute; /* Фиксируем изображение относительно окна браузера */
-    top: 790px;
-    right: 0px;
-
-}
-.crl2{
-    position: absolute;
-    top: 2100px;
-}
-.crl3{
-    position: absolute;
-    right: 0;
-    top: 3000px;
-}
-.crl4{
-    position: absolute;
-    left: -175px;
-    top: 4150px;
-}

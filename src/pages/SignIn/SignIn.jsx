@@ -1,16 +1,21 @@
 import styles from './SignIn.module.css'
-import LogoText from '../../components/HeaderGroup/LogoText/LogoText.jsx'
+import LogoText from '../../components/HeaderGroup/LogoTextRow/LogoText.jsx'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import clsx from 'clsx'
+
 function SignIn(){
     //Логика авторизации
         const [email, setEmail] = useState('')
         const [password, setPassword] = useState('')
+        const [errors, setErrors] = useState({})
 
         async function loginUser(event){
             event.preventDefault()
+            setErrors({})
+
             try{
-                const response = await fetch('http://localhost:1337/api/login', {
+                const response = await fetch('https://localhost:1337/api/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -25,14 +30,23 @@ function SignIn(){
     
                 if(data.user) {
                     localStorage.setItem('token', data.user)
-                    alert('Login Succsessful')
                     window.location.href = '/dashboard'
-                    console.log({
-                        email: data.user.email, // Правильный доступ к данным
-                        password: data.user.password, // Если пароль возвращается
-                    })
                 }else{
-                    alert('Неверная почта или пароль')
+                    // Обработка ошибок с сервера
+                    const newErrors = {}
+                    if(data.error.includes('Неверный пароль')){
+                        newErrors.password = data.error
+                    }else if(data.error.includes('Неверная почта')){
+                        newErrors.email = data.error
+                    }else if(data.error.includes('Пароль должен')){
+                        newErrors.password = data.error
+                    }else if(data.error.includes('поля')){
+                        if (!email) newErrors.email = 'Имя обязательно'
+                        if (!password) newErrors.password = 'Пароль обязателен'
+                    }else{
+                        alert(data.error)
+                    }
+                    setErrors(newErrors)
                 }
 
             }catch (error) {
@@ -60,8 +74,13 @@ function SignIn(){
                         placeholder='Электронная почта'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        className={clsx({ [styles.inputError]: errors.email })}
+                        
                     />
                 </div>
+                {errors.email && (
+                    <div className={styles.errorEmail}>{errors.email}</div>
+                )}
                 <div className={styles.password}>
                     <img src="src/assets/password.svg" alt="" />
                     <input 
@@ -69,8 +88,15 @@ function SignIn(){
                         placeholder='Пароль'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        className={clsx({ [styles.inputError]: errors.password })}
                     />
                 </div>
+                {errors.password && (
+                    <div className={styles.errorPassword}>{errors.password}</div>
+                )}
+                <button className={styles.confirm} type='submit'>
+                    <img src="src/assets/SignUPINArrow.svg" alt="" />
+                </button>
 
                 <div className={styles.btnWrapper}>
                     <button className={styles.reg}>

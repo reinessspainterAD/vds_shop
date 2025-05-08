@@ -2,40 +2,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 .banner{
-    display: block;
+    position: relative;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     width: 100%;
-    height: 650px;
-    background-color: white;
+    height: 600px;
+    background-color: transparent;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    margin-bottom: 150px;
 }
 
 .slide_container{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-.slide_container h2{
-    margin-left: 300px;
-    margin-top: 140px;
-    margin-bottom: 0px;
-    color: black;
+.text h2{
+    margin: 0;
+    margin-left: 6rem;
+    color: white;
     font-family: "Roboto", serif;
-    font-weight: 500;
-    font-size: 48px;
-}
-
-.slide_container p{
-    margin-left: 300px;
-    margin-top: 20px;
-    color: black;
-    width: 561px;
-    font-family: "Roboto Condensed", serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 32px;
 }
 
+.text p{
+    margin: 0;
+    margin-top: 1rem;
+    margin-left: 6rem;
+    font-family: "Roboto", serif;
+    font-weight: 200;
+    font-size: 28px;
+    margin-right: 2rem;
+    color: white;
+}
+
 .image{
-    margin-left: auto;
-    height: 650px;
+    margin: 0;
+    margin-right: 3rem;
 }
 
 .navigation{
@@ -45,8 +54,9 @@
     justify-items: center;
     margin: auto;
     position: absolute;
-    left: 300px;
-    top: 696px;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .navigation button{
@@ -70,12 +80,12 @@
 }
 
 .indicators div{
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     width: 20px;
-    height: 2px;
+    height: 3px;
+    border-radius: 2px;
 }
 
 .indicators .active{
-    background-color: #006FFF;
+    background-color: #5c8fff;
 }
-  

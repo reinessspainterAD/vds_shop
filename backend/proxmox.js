@@ -27,6 +27,7 @@ async function proxmoxRequest(method, path, data) {
                 "Content-Type": "application/x-www-form-urlencoded", // <--- Обязательно!
             },
             data: qs.stringify(data), // <--- Переводим объект в строку
+            // httpsAgent: new (require('https').Agent)({ rejectUnauthorized: false }),
         });
 
         console.log("Ответ от Proxmox:", response.data);
@@ -37,10 +38,16 @@ async function proxmoxRequest(method, path, data) {
     }
 }
 
+async function loginToProxmox() {
+    const response = await axios.post(`${PROXMOX_API_URL}/access/ticket`, {
+        username: 'api-user@pve',
+        password: ']CIC1Him.M5owd#'
+    }, {
+        httpsAgent: new (require('https').Agent)({ rejectUnauthorized: false }) // Отключаем проверку SSL на время разработки
+    })
+    return response.data.data
+}
 module.exports = {
-    // createVM,
-    // getVMStatus,
-    // stopVM,
-    // deleteVM
-    proxmoxRequest
+    proxmoxRequest,
+    loginToProxmox
 };

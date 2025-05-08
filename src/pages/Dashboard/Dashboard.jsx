@@ -1,5 +1,5 @@
 import styles from './Dashboard.module.css'
-import LogoText from '../../components/HeaderGroup/LogoText/LogoText.jsx'
+import LogoText from '../../components/HeaderGroup/LogoTextRow/LogoText.jsx'
 import apiClient from '../../api/apiClient.js'
 import ActiveServers from '../../components/DashboardGroup/ActiveServers/ActiveServers.jsx'
 import BuyHistory from '../../components/DashboardGroup/BuyHistory/BuyHistory.jsx'

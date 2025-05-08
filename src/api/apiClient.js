@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // Создаем инстанс Axios с базовым URL нашего API
 const apiClient = axios.create({
-    baseURL: 'http://localhost:1337',
+    baseURL: 'https://localhost:1337',
 });
 
 // Добавляем перехватчик для добавления токена в заголовки

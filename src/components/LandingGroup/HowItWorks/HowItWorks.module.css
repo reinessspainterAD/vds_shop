@@ -5,7 +5,64 @@
 .howItWorks{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    margin-bottom: 150px;
+}
+
+.howItWorks h2{
+    margin: 0%;
+    margin-bottom: 60px;
+    font-family: "Roboto Condensed", serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: white;
+}
+
+.conteiner{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto; /* центрирует по горизонтали */
+}
+
+.leftSide{
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    
+}
+
+.leftSide p{
+    margin: 0;
+    width: 700px;
+    font-family: "Roboto Flex", serif;
+    font-weight: 400;
+    font-size: 38px;
+    text-align: right;
+    color: white;
+}
+
+.rightSide{
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.rightSide p{
+    margin: 0;
+    width: 700px;
+    font-family: "Roboto Flex", serif;
+    font-weight: 400;
+    font-size: 38px;
+    text-align: left;
+    color: white;
+}
+
+/* .howItWorks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     justify-content: space-around;
 }
 
@@ -54,4 +111,4 @@
     margin-left: 220px;
     margin-right: 80px;
     color: white;
-}
+} */

@@ -2,241 +2,157 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-.body{
+.configurator {
     display: flex;
     flex-direction: column;
     background-image: linear-gradient(#1A7DFF, #6832fd);
-    width: 100%;
     height: 100vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    font-family: "Roboto", serif;
 }
 
 .header{
+    margin: 0;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-items: center;
-    margin-top: 25px;
-    margin-left: 100px;
-    margin-right: 100px;
 }
 
-.leftheader{
-    margin-left: auto;
+
+.mainParts{
     display: flex;
     flex-direction: row;
-    gap: 20px;
 }
 
-.leftheader button{
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 50%;
-    background-color: white;
-}
-
-.leftheader button:hover{
-    background-color: #006FFF;
-}
-
-
-.leftheader button img {
-    transition: filter 0.3s ease;
-}
-
-.leftheader button:hover img {
-    filter: brightness(0) invert(1);
-}
-
-.configurator{
-    background-color: white;
-    margin-left: 100px;
-    margin-right: 100px;
-    border: none;
-    border-radius: 5px;
-}
-
-.naming{
+.configLeft{
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
-    margin-left: 100px;
-}
-
-.naming div{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-items: center;
-    margin-bottom: 20px;
-}
-
-.naming div h2{
-    font-family: "Roboto Flex", serif;
-    font-weight: 400;
-    font-size: 24px;
-    color: black;
-    margin: 0;
-
-}
-
-.naming div input{
-    height: 35px;
-    margin-left: auto;
-    margin-right: 100px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
     width: 65%;
-    border: none;
-    background-color: #D9D9D9;
-    border-radius: 5px;
-    font-family: "Roboto Flex", serif;
-    font-weight: 400;
-    font-size: 20px;
-    color: black;
-    text-align: center;
-    color: #A5A5A5;
 }
 
-.naming div input:focus{
-    outline: none;
+.label{
+    display: block;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+input[type='text'], input[type='password']{
+    width: 99.3%;
+    /* padding: 0.5rem; */
+    height: 30px;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size:large;
+}
+
+input[type='text']:focus, input[type='password']:focus{
+    border-color: #007bff;
+    outline: #007bff;
 }
 
 
-.metrics{
-    display: flex;
-    flex-direction: column;
-    margin-left: 100px;
-    margin-right: 100px;
+
+input[type="range"] {
+    width: 100%;
+    margin: 0.5rem 0;
 }
 
-.metrics h2{
-    font-family: "Roboto Flex", serif;
-    font-weight: 400;
-    font-size: 24px;
-    color: black;
+.configSection{
+    margin-bottom: 0.2rem;
+}
+
+.configLabel{
     margin: 0;
-    margin-top: 10px;
-}
-
-.metrics p{
-    font-family: "Roboto", serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: black;
-    margin: 0;
-    margin-top: 10px;
-}
-.cpu, .socket, .ram{
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-}
-
-.value{
-    display: flex;
-    width: 80px;
-    height: 40px;
-    background-color:#D9D9D9;
-    margin-left: 40px;
-    margin-right: 10px;
-    border-radius: 5px;
-    justify-content: center;
-    align-items: center;
-    font-family: "Roboto", serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: black;
-}
-
-.disk{
-    display: flex;
-    flex-direction: column;
-}
-
-.disk div{
-    display: flex;
-    flex-direction: row;
-    justify-items: center;
-    align-items: center;
-}
-
-.disk div p, .disk div button{
-    margin: 0;
-    margin-top: 10px;
-}
-
-.disk div p{
-    margin-right: 10px;
-}
-
-.disk div button{
-    margin-left: 10px;
-    border: none;
-    width: 50px;
-    height: 25px;
-    border-radius: 5px;
-}
-
-.diskdiv{
-    display: flex;
-    flex-direction: row;
-}
-
-.iso{
-    display: flex;
-    flex-direction: column;
-}
-
-.iso div{
-    display: flex;
-    flex-direction: row;
-}
-
-.iso p{
-    font-family: "Roboto", serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: white;
-
-}
-
-.iso button{
-    margin: 0;
-    margin-top: 10px;
-    width: 120px;
-    height: 80px;
-    margin-right: 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #D9D9D9;
-}
-
-.leftside{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.confirm{
-    width: 200px;
-    height: 50px;
-    border: none;
-    border-radius: 5px;
-    background-color: #006FFF;
-    color: white;
-    font-family: "Roboto", serif;
-    font-weight: 400;
+    margin-bottom: 0.2rem;
     font-size: 18px;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: 100px;
-    margin-bottom: 40px;
+    height: 60px;
 }
 
-.confirm:hover{
-    background-color: #0060dd;
+.storageToggle button,
+.osOptions button{
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-.active{
-    background-color: #006FFF !important;
+.storageToggle button.active,
+.osOptions button.active{
+    background-color: #007bff;
     color: white;
+    border-color: #007bff;
+}
+
+.configRight{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 8px;
+    padding: 3rem;
+    width: 30%;
+    margin-left: 2%;
+    font-size: 20px;
+}
+
+.configRight h2{
+    margin: 0;
+}
+
+.configRight ul{
+    list-style:none;
+    padding-left: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.configRight li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.configRight li img{
+    width: 20px;
+    height: 20px;
+
+}
+
+.configRight button{
+    padding: 0.75rem 1.5rem;
+    background-color: #306bda;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.configRight button:hover{
+    background-color: #2b5ab3;
+}
+
+.label{
+    font-size: 18px;
+}
+
+.configLabel p{
+    display: flex;
+    justify-content: center; /* горизонтально */
+    align-items: center;     /* вертикально */
+    background-color: #f3f3f3;
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    padding: 0.2rem;
 }

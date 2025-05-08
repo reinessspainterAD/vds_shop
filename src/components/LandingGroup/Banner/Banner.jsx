@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from './Banner.module.css'
+import leftRomb from '../../../assets/leftRomb.svg'
+import rightRomb from '../../../assets/rightRomb.svg'
 
 function Banner(){
     const slides = [
@@ -26,6 +28,7 @@ function Banner(){
         <div className={styles.banner}>
             {/* Слайд */}
             <div className={styles.slide_container}>
+                <img className={styles.leftRomb} src={leftRomb} alt="leftRomb" />
                 <div className={styles.text}>
                     <h2>{slides[currentSlide].title}</h2>
                     <p>{slides[currentSlide].description}</p>
@@ -33,6 +36,7 @@ function Banner(){
                 <div className={styles.image}>
                     <img className={styles.banner_svg} src={slides[currentSlide].image} alt="bannerimage" />
                 </div>
+                <img className={styles.rightRomb} src={rightRomb} alt="rightRomb" />
                 
 
             </div>

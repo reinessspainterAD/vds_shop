@@ -1,15 +1,22 @@
 .header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
 }
 
-.logoText{
-    margin-left: 200px;
+.comb{
+    display: flex;
+    flex-direction: column;
 }
 
-.rightSide {
-    margin-right: 200px;
-    display: flex;
-    gap: 20px;
+
+.leftAir{
+    margin-top: 5rem;
+    margin-right: 5rem;
+}
+
+.rightAir{
+    margin-top: 5rem;
+    margin-left: 5rem;
 }

@@ -6,9 +6,9 @@ function LoginButton(){
     }
     return(
         <div className={styles.loginButton}>
+            <p className={styles.slogan}>Создайте свой первый сервер за 5 минут — <br />просто, быстро, доступно!</p>
             <button onClick={login}>
-                <img src="src/assets/user.svg" alt="userIcon" />
-                <p>Войти</p>
+                <p className={styles.authP}>Войти</p>
             </button>
         </div>
     )

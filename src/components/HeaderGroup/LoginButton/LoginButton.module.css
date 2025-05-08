@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+.loginButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 150px;
+}
+
+.slogan{
+    font-family: "Roboto";
+    font-weight: 300;
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 1.5rem;
+}
+
 .loginButton button{
     display: flex;
     flex-direction: row;
@@ -13,26 +32,17 @@
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.loginButton p{
+.authP{
     font-family: "Roboto";
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
     color: #006FFF;
-    margin-left: 10px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .loginButton button:hover{
     background-color: #006FFF;
-}
-
-.loginButton button img{
-    transition: filter 0.3s ease;
-}
-
-.loginButton button:hover img{
-    filter: brightness(0) invert(1);
 }
 
 .loginButton button p{

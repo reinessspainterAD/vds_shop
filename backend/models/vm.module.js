@@ -6,11 +6,11 @@ const vmSchema = new mongoose.Schema(
         vmId: { type: Number, required: true, unique: true },
         name: { type: String },
         memory: { type: Number },
-        socket: { type: Number },
         cpu: { type: Number },
         disk: { type: Number },
-        iso: { type: String },
-        createdAt: { type: Date, default: Date.now },
+        os: { type: String },
+        startDate: {type: Date},
+        endDate: {type: Date}
     },
     { collection: 'vm-data' }
 )
