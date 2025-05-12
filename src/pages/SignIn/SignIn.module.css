@@ -59,8 +59,11 @@
 }
 
 .password{
+    display: flex;
+    align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
+
 }
 
 .email img, .password img{

@@ -6,6 +6,82 @@
     background-image: linear-gradient(#1A7DFF, #6832fd);
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.navbar{
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar button{
+    background-color: transparent;
+    border: none;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: border-bottom 0.1s ease; /* Плавный переход */
+    
+}
+
+.navbar button:hover {
+    border-bottom: 2px solid white;
+}
+
+.usermenu{
+    display: flex;
+    align-items: center;
+    text-align: right;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.usermenu h2{
+    margin: 0;
+    color: #ffffff;
+    margin-bottom: 0.2rem;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.usermenu p{
+    margin: 0;
+    color: #ffffff;
+    font-family: "Roboto", serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.usermenu img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color:aliceblue;
+}
+
+
+
+
+/* .dashboard{
+    background-image: linear-gradient(#1A7DFF, #6832fd);
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -114,12 +190,12 @@
     margin-top: 15px;
 }
 
-/* .configurator img{
+.configurator img{
     width: 45px;
     height: 45px;
     margin-left: 55px;
     margin-right: 20px;
-} */
+}
 
 .configurator p{
     font-family: "Roboto", serif;
@@ -127,14 +203,14 @@
     font-size: 22px;
     color: white;
 }
-/* 
+
 .configurator:hover{
     background-color: rgb(255, 255, 255);
 }
 
 .configurator:hover p{
     color: #4e0eff;
-} */
+}
 
 
 .rightside{
@@ -143,4 +219,4 @@
     border-radius: 5px;
     width: 1290px;
     height: 75vh;
-}
+} */

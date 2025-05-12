@@ -10,7 +10,10 @@ const vmSchema = new mongoose.Schema(
         disk: { type: Number },
         os: { type: String },
         startDate: {type: Date},
-        endDate: {type: Date}
+        endDate: {type: Date},
+        active: {type: Boolean},
+        costDay: {type: Number},
+        costFull: {type: Number},
     },
     { collection: 'vm-data' }
 )

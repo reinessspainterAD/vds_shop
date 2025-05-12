@@ -1,0 +1,57 @@
+.dropDownMenu{
+    position:absolute;
+    top: 7.5rem;
+    right: 10rem;
+    width: 175px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.76);
+    backdrop-filter: blur(10px);
+    border: 1px, solid rgb(255, 255, 255);
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.dropDownMenu:before{
+    content: '';
+    position: absolute;
+    top: -0.7rem;
+    right: 1.1rem;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background-color: transparent;
+    border-left: 1px solid rgb(255, 255, 255);
+    border-top: 1px solid rgb(255, 255, 255);
+}
+
+.ul{
+    display: flex;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-inline-start: 0;
+
+}
+
+.dropDownMenu li{
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    gap: 1rem;
+}
+
+.dropDownMenu li img{
+    width: 25px;
+    height: 25px;
+}
+
+.dropDownMenu li:hover{
+    font-weight: 600;
+}

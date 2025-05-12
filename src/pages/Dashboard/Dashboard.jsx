@@ -2,8 +2,8 @@ import styles from './Dashboard.module.css'
 import LogoText from '../../components/HeaderGroup/LogoTextRow/LogoText.jsx'
 import apiClient from '../../api/apiClient.js'
 import ActiveServers from '../../components/DashboardGroup/ActiveServers/ActiveServers.jsx'
-import BuyHistory from '../../components/DashboardGroup/BuyHistory/BuyHistory.jsx'
-import Settings from '../../components/DashboardGroup/Settings/Settings.jsx'
+import ClosedServers from '../../components/DashboardGroup/ClosedServers/ClosedServers.jsx'
+import DropDownMenuD from '../../components/HeaderGroup/DropDownMenuD/DropDownMenuD.jsx'
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import userLogo from '../../assets/user1.svg'
@@ -12,21 +12,16 @@ import userLogo from '../../assets/user1.svg'
 function Dashboard(){
     const [userData, setUserData] = useState(null)
     const [currentComponent, setCurrentComponent] = useState('activeServers')
+    const [openUserMenu, setOpenUserMenu] = useState(false)
+    const navigate = useNavigate()
 
     const componentsMap = {
         activeServers: <ActiveServers />,
-        buyHistory: <BuyHistory />,
-        settings: <Settings />
+        closedServers: <ClosedServers />,
     }
 
     const handleMenuClick = (componentName) => {
         setCurrentComponent(componentName)
-    }
-
-    const handleLogout = () => {
-        localStorage.removeItem('token') // Удаляем токен
-        console.log("Токен удален, перенаправление на login...") // Логируем удаление
-        window.location.href = '/login';
     }
 
     const getUserData = async () => {
@@ -67,41 +62,69 @@ function Dashboard(){
         </button>
     );
 
-
     return(
         <section className={styles.dashboard}>
             <div className={styles.header}>
-                <div className={styles.logotext}><LogoText /></div>
+                <div className={styles.logoText}><LogoText /></div>
+                <div className={styles.navbar}>
+                    {renderMenuButton('activeServers', 'Активные сервера')}
+                    {renderMenuButton('closedServers', 'Закрытые сервера')}
+                    <button onClick={() => {navigate('/configurator')}}>Конфигуратор</button>
+                </div>
+                <div className={styles.usermenu} onClick={() => setOpenUserMenu((prev) => !prev)}>
+                    <div>
+                        <h2>{userData.name}</h2>
+                        <p>{userData.email}</p>
+                    </div>
+                    <img src={userLogo} alt="userphoto" />
+                    
+                </div>
+                {
+                    openUserMenu && <DropDownMenuD />
+                }
+                
             </div>
 
             <div className={styles.body}>
-                <div className={styles.leftside}>
-                    <div className={styles.userbox}>
-                        <div className={styles.userlogo}>
-                            <img src={userLogo} alt="userphoto" />
-                            <div>
-                                <h2>{userData.name}</h2>
-                                <p>{userData.email}</p>
-                            </div>
-                        </div>
-                        <nav className={styles.navbar}>
-                            {renderMenuButton('activeServers', 'Активные серверы')}
-                            {/* {renderMenuButton('buyHistory', 'История покупок')}
-                            {renderMenuButton('settings', 'Настройки')} */}
-                            <button onClick={handleLogout}>Выход</button>
-                        </nav>
-                    </div>
-                    <Link className={styles.configurator} to={'/configurator'}>
-                        {/* <img src="src/assets/confg.svg" alt="confg" /> */}
-                        <p>Конфигуратор</p>
-                    </Link>
-                </div>
-                <div className={styles.rightside}>
-                    {componentsMap[currentComponent]}
-                </div>
+                {componentsMap[currentComponent]}
             </div>
         </section>
     )
+
+    // return(
+    //     <section className={styles.dashboard}>
+    //         <div className={styles.header}>
+    //             <div className={styles.logotext}><LogoText /></div>
+    //         </div>
+
+    //         <div className={styles.body}>
+    //             <div className={styles.leftside}>
+    //                 <div className={styles.userbox}>
+    //                     <div className={styles.userlogo}>
+    //                         <img src={userLogo} alt="userphoto" />
+    //                         <div>
+    //                             <h2>{userData.name}</h2>
+    //                             <p>{userData.email}</p>
+    //                         </div>
+    //                     </div>
+    //                     <nav className={styles.navbar}>
+    //                         {renderMenuButton('activeServers', 'Активные серверы')}
+    //                         {/* {renderMenuButton('buyHistory', 'История покупок')}
+    //                         {renderMenuButton('settings', 'Настройки')} */}
+    //                         <button onClick={handleLogout}>Выход</button>
+    //                     </nav>
+    //                 </div>
+    //                 <Link className={styles.configurator} to={'/configurator'}>
+    //                     {/* <img src="src/assets/confg.svg" alt="confg" /> */}
+    //                     <p>Конфигуратор</p>
+    //                 </Link>
+    //             </div>
+    //             <div className={styles.rightside}>
+    //                 {componentsMap[currentComponent]}
+    //             </div>
+    //         </div>
+    //     </section>
+    // )
 }
 
 export default Dashboard

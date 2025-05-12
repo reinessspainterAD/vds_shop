@@ -185,7 +185,10 @@ app.post("/api/lxc/create", verifyToken, async (req, res) => {
             disk: req.body.disk,
             os: req.body.template,
             startDate,
-            endDate
+            endDate,
+            active: true,
+            costDay: req.body.costday,
+            costFull: req.body.costfull
         });
 
         await newContainer.save();
@@ -199,7 +202,18 @@ app.post("/api/lxc/create", verifyToken, async (req, res) => {
 app.get('/api/lxc/list', verifyToken, async (req, res) => {
     try {
         const user = await User.findOne({ email: req.user.email });
-        const containers = await VM.find({ userId: user._id }); // Модель VM переиспользована
+        const containers = await VM.find({ userId: user._id , active: true}); // Модель VM переиспользована
+        console.log("Найденные контейнеры:", containers);
+        return res.json({ status: 'ok', containers });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+app.get('/api/lxc/negativelist', verifyToken, async (req, res) => {
+    try {
+        const user = await User.findOne({ email: req.user.email });
+        const containers = await VM.find({ userId: user._id , active: false}); // Модель VM переиспользована
         console.log("Найденные контейнеры:", containers);
         return res.json({ status: 'ok', containers });
     } catch (error) {
@@ -211,16 +225,8 @@ app.get('/api/lxc/list', verifyToken, async (req, res) => {
 app.get('/api/lxc/status/:vmid', verifyToken, async (req, res) => {
     try {
         const { vmid } = req.params;
-        const status = await proxmoxRequest('GET', `/nodes/pve/lxc/${vmid}/config`);
-        // const { cpu, mem, maxmem, disk, maxdisk } = status.data;
-
-        // //Расширить под нужные метрики
-        // const formattedMetrics = {
-        //     cpu: (cpu * 100).toFixed(2),
-        //     ram: ((mem / maxmem) * 100).toFixed(2),
-        //     disk: ((disk / maxdisk) * 100).toFixed(2)
-        // };
-
+        const status = await proxmoxRequest('GET', `/nodes/pve/lxc/${vmid}/status/current`);
+        
         res.json({ status: 'ok', data: status });
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -242,9 +248,22 @@ app.post('/api/lxc/stop/:vmid', verifyToken, async (req, res) => {
 app.delete('/api/lxc/delete/:vmid', verifyToken, async (req, res) => {
     try {
         const { vmid } = req.params;
+
+        // Удаление самого контейнера в Proxmox
         await proxmoxRequest('DELETE', `/nodes/pve/lxc/${vmid}`);
-        await VM.findOneAndDelete({ vmId: vmid }); // та же модель, если вы её не разделяли
-        res.json({ status: 'ok', message: `Контейнер ${vmid} удалён` });
+
+        // Обновление записи в БД: помечаем как неактивную
+        const updated = await VM.findOneAndUpdate(
+            { vmId: vmid },
+            { active: false },
+            { new: true }
+        );
+
+        if (!updated) {
+            return res.status(404).json({ error: `Контейнер с vmId ${vmid} не найден.` });
+        }
+
+        res.json({ status: 'ok', message: `Контейнер ${vmid} деактивирован (удалён логически)` });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

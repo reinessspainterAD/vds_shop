@@ -2,7 +2,198 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+
 .activeServers{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid white;
+    padding: 2rem;
+    height: auto;
+    max-height: 75vh;
+    overflow-x: auto;
+}
+
+.activeServers::-webkit-scrollbar{
+    width: 0;
+}
+
+.h2{
+    margin: 0;
+    margin-bottom: 2rem ;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: black;
+}
+
+.serversBox{
+    display: flex;
+    flex-direction: column;
+}
+
+/* .serverItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}    */
+
+.serverHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.leftHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.leftHeader button{
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center; /* по вертикали */
+    justify-content: center; /* по горизонтали */
+    border: none;
+    padding: 1.2rem;
+    border-radius: 50%;
+    
+}
+
+.leftHeader button:hover{
+    background-color: #bed1e9;
+}
+.leftHeader h3{
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.leftHeader img{
+    width: 30px;
+    height: 30px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.buttons span{
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 16px;
+    margin-right: 1rem;
+}
+
+.buttons button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #1A7DFF;
+    border: none;
+    padding: 0.7rem;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+    border-radius: 5px;
+}
+
+.buttons button img{
+    width: 20px;
+    height: 20px;
+}
+
+.buttons button:hover{
+    background-color: #1463ca;
+}
+
+.idk{
+    border: 2px solid #1A7DFF;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.chartBlock {
+  margin-top: 16px;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.expanded{
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 0 0 10px 10px;
+    border-bottom: 2px solid #1A7DFF;
+    border-left: 2px solid #1A7DFF;
+    border-right: 2px solid #1A7DFF;
+    /* background-color:#c1d8f7; */
+}
+
+.subDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.metrics p{
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgb(48, 48, 48);
+    margin-block-end: 1rem;
+    margin-block-start: 1rem;
+    
+}
+
+.graphs{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.graphs div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 300px;
+    height: 200px; */
+    background-color: rgb(25, 30, 53);
+    border-radius: 5px;
+}
+
+.graphs div h3{
+    margin: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: "Roboto", serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: white;
+}
+/* .activeServers{
     display: flex;
     flex-direction: column;
 }
@@ -26,7 +217,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between; /* Раздвигает содержимое */
+    justify-content: space-between;
     background-color: #006FFF;
     margin-left: 40px;
     margin-right: 40px;
@@ -43,7 +234,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%; /* Растягиваем по ширине */
+    width: 100%;
 }
 
 .metrics img{
@@ -81,4 +272,4 @@
     font-weight: 400;
     font-size: 20px;
     color: #ffffff;
-}
+} */
