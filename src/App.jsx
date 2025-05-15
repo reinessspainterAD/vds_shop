@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard/Dashboard.jsx'
 import ProtectedRoute from './api/ProtectedRoute.jsx'
 import Server from './components/DashboardGroup/ActiveServers/Server/Server.jsx'
 import Configurator from './pages/Configurator/Configurator.jsx'
+import Settings from './pages/Settings/Settings.jsx'
 import './App.css'
 
 function App() {
@@ -40,6 +41,15 @@ function App() {
                 <Configurator/>
               </ProtectedRoute>
             }>
+          </Route>
+          <Route
+            path='/settings'
+            element={
+              <ProtectedRoute>
+                <Settings/>
+              </ProtectedRoute>
+            }
+          >
           </Route>
         </Routes>
       </BrowserRouter>

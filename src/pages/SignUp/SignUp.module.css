@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-.signUp{
+/* .signUp{
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -41,7 +41,7 @@
     align-self: center;
 }
 
-.form img{
+.line{
     align-self: center;
     margin: 0;
     width: 70px;
@@ -84,6 +84,7 @@
     font-weight: 500;
     font-size: 16px;
     color: #A5A5A5;
+    height: ;
 }
 
 .name input:focus, .email input:focus, .password input:focus{
@@ -99,7 +100,6 @@
 }
 
 .btnWrapper{
-    /* position: absolute; */
     top: 600px;
     display: flex;
     flex-direction: row;
@@ -240,4 +240,299 @@
     font-weight: 700;
     font-size: 10px;
     color: rgb(255, 103, 103)
+}
+
+.profileImg{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+
+.regImg{
+    display: flex;
+    width: 75px;
+    height: 75px;
+} */
+
+.cloud1{
+    position: absolute;
+    right: 0;
+    top: 33px;
+}
+
+.cloud2{
+    position: absolute;
+    left: 0;
+    top: 156px;
+}
+
+.cloud3{
+    position: absolute;
+    left: 0;
+    top: 886px;
+}
+
+.cloud4{
+    position: absolute;
+    right: 0;
+    top: 841px;
+}
+
+.signUp{
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(#6832fd, #1A7DFF);
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    justify-items: center;
+}
+
+.logoText{
+    margin-top: 1rem;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 500px;
+    height: 700px;
+    border-radius: 20px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.form h2{
+    margin: 0;
+    margin-top: 70px;
+    margin-bottom: 10px;
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #006FFF;
+    align-self: center;
+}
+
+.line{
+    align-self: center;
+    margin: 0;
+    width: 70px;
+    height: 5px;
+    margin-bottom: 50px;
+}
+
+.name, .email, .password{
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    background-color: #E7E7E7;
+    width: 380px;
+    height: 60px;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.name img, .password img, .email img{
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.profileImg{
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    width: 380px;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.name input, .email input, .password input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #A5A5A5;
+}
+
+.name input:focus, .email input:focus, .password input:focus{
+    outline: none;
+    border: none;
+}
+
+.name input::placeholder, .email input::placeholder, .password input::placeholder{
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #A5A5A5;
+}
+
+.btnWrapper{
+    top: 600px;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    gap: 20px;
+    margin-top: 82px;
+    margin-bottom: 40px;
+}
+
+.btnWrapper button{
+    width: 180px;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    align-items: center;
+}
+
+.login{
+    background-color: #E7E7E7;
+}
+
+.login:hover{
+    background-color: #006FFF;
+}
+
+.loginL{
+    text-decoration: none;
+}
+.login p{
+    margin: 0;
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #A5A5A5;
+    align-self: center;
+}
+
+.login p:hover{
+    color: white;
+}
+
+
+.reg{
+    background-color: #006FFF;
+}
+
+.reg:hover{
+    background-color: #6832fd;
+}
+
+.regL{
+    text-decoration: none;
+}
+.reg p{
+    margin: 0;
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    align-self: center;
+}
+
+.confirm{
+    position: absolute;
+    width: 120px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    background-color: #006FFF;
+    margin-left: 320px;
+    top: 33.3rem;
+}
+
+.confirm:hover{
+    background-color:#6832fd;
+}
+
+.confirm img{
+    width: 50%;
+    height: 100%;
+}
+
+.inputError::placeholder {
+    color: rgb(255, 134, 134) !important;
+}
+
+.errorName{
+    position: absolute;
+    top: 22rem;
+    left: 60px;
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-size: 10px;
+    color: rgb(255, 103, 103)
+}
+
+.errorEmail{
+    position: absolute;
+    top: 26.8rem;
+    left: 60px;
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-size: 10px;
+    color: rgb(255, 103, 103)
+}
+
+.errorPassword{
+    position: absolute;
+    top: 31.7rem;
+    left: 60px;
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-size: 10px;
+    color: rgb(255, 103, 103)
+}
+
+.profileImg{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.regImg {
+    width: 100px;
+    height: 100px;
+    /* div остаётся фиксированного размера */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* чтобы обрезать лишнее */
+    border-radius: 50%;
+    background-color: #f0f0f0; /* необязательно */
+    background-color: #006FFF;
+}
+
+.regImg img {
+    object-fit:fill; /* чтобы не искажалась */
+    border-radius: 50%; /* если нужно сделать её круглой */
+}
+
+.uploadBtn{
+    padding: 1rem;
+    background-color: #E7E7E7;
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: rgb(165, 165, 165);
+    border-radius: 5px;
+}
+
+.uploadBtn:hover{
+    background-color: #006FFF;
+    color: white;
+}
+
+.defaultImg{
+    width: 50px;
+    object-fit:fill; /* чтобы не искажалась */
+    border-radius: 50%; /* если нужно сделать её круглой */
 }

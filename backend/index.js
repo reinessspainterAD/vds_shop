@@ -20,7 +20,8 @@ const { URLSearchParams } = require('url')
 const app = express()
 // expressWs(app);
 app.use(cors())
-app.use(express.json())
+app.use(express.json({ limit: '10mb' }))
+app.use(express.urlencoded({ extended: true, limit: '10mb' }))
 
 // Загрузка ключа и сертификата
 const server = https.createServer({
@@ -36,10 +37,12 @@ mongoose.connect('mongodb://localhost:27017/vds', {
     useUnifiedTopology: true,
 })
 
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Регистрация
 app.post('/api/register', async(req, res) =>{
     try{
-        const { name, email, password } = req.body;
+        const { name, email, password, image } = req.body;
 
         // Проверка на пустые поля
         if (!name || !email || !password) {
@@ -59,10 +62,11 @@ app.post('/api/register', async(req, res) =>{
 
         const hashedPassword = await bcrypt.hash(req.body.password, 10)
         const user = new User({
-            name: req.body.name,
-            email: req.body.email,
+            name,
+            email,
             password: hashedPassword,
-        })
+            image, // ← это обязательно
+        });
         await user.save()
         res.json({ status: 'ok'})
     } catch (e){
@@ -126,11 +130,93 @@ app.get('/api/user-data', async (req, res) => {
         }
 
         // Возвращаем данные пользователя (кроме пароля)
-        return res.json({ status: 'ok', user: { name: user.name, email: user.email } });
+        return res.json({ status: 'ok', user: { name: user.name, email: user.email, image: user.image} });
     } catch (err) {
         return res.status(403).json({ status: 'error', error: 'Invalid token' });
     }
 });
+
+// Изменение имени
+app.put('/api/user/update-name', async (req, res) => {
+    const token = req.headers.authorization?.split(' ')[1];
+    const { name } = req.body;
+
+    if (!token || !name) {
+        return res.status(400).json({ status: 'error', error: 'Токен и имя обязательны' });
+    }
+
+    try {
+        const decoded = jwt.verify(token, 'secret123');
+        await User.updateOne({ email: decoded.email }, { name });
+        return res.json({ status: 'ok', message: 'Имя обновлено' });
+    } catch (err) {
+        return res.status(403).json({ status: 'error', error: 'Недопустимый токен' });
+    }
+});
+
+// Изменение электронной почты
+app.put('/api/user/update-email', async (req, res) => {
+    const token = req.headers.authorization?.split(' ')[1];
+    const { newEmail } = req.body;
+
+    if (!token || !newEmail) {
+        return res.status(400).json({ status: 'error', error: 'Токен и email обязательны' });
+    }
+
+    try {
+        const decoded = jwt.verify(token, 'secret123');
+
+        // Проверка, что новый email ещё не занят
+        const existingUser = await User.findOne({ email: newEmail });
+        if (existingUser) {
+            return res.status(400).json({ status: 'error', error: 'Email уже используется' });
+        }
+
+        await User.updateOne({ email: decoded.email }, { email: newEmail });
+        return res.json({ status: 'ok', message: 'Email обновлён' });
+    } catch (err) {
+        return res.status(403).json({ status: 'error', error: 'Недопустимый токен' });
+    }
+});
+// Изменение пароля
+app.put('/api/user/update-password', async (req, res) => {
+    console.log('req.body:', req.body);
+    const token = req.headers.authorization?.split(' ')[1];
+    const { password } = req.body;
+
+    if (!token || !password) {
+        return res.status(400).json({ status: 'error', error: 'Токен и пароль обязательны' });
+    }
+
+    try {
+        const decoded = jwt.verify(token, 'secret123');
+        const hashedPassword = await bcrypt.hash(password, 10);
+        await User.updateOne({ email: decoded.email }, { password: hashedPassword });
+        return res.json({ status: 'ok', message: 'Пароль обновлён' });
+    } catch (err) {
+        return res.status(403).json({ status: 'error', error: 'Недопустимый токен' });
+    }
+});
+
+// Изменение аватара
+app.put('/api/user/update-avatar', async (req, res) => {
+    const token = req.headers.authorization?.split(' ')[1];
+    const { image } = req.body;
+
+    if (!token || !image) {
+        return res.status(400).json({ status: 'error', error: 'Токен и изображение обязательны' });
+    }
+
+    try {
+        const decoded = jwt.verify(token, 'secret123');
+        await User.updateOne({ email: decoded.email }, { image });
+        return res.json({ status: 'ok', message: 'Аватар обновлён' });
+    } catch (err) {
+        return res.status(403).json({ status: 'error', error: 'Недопустимый токен' });
+    }
+});
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 app.use(bodyParser.urlencoded({ extended: true })) // Указываем, что данные передаются как x-www-form-urlencoded
 app.use(bodyParser.json());

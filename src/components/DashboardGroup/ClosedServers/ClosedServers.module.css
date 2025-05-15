@@ -42,7 +42,7 @@
     flex-direction: column;
     background-color: white;
     width: 40rem;
-    height: 40rem;
+    /* height: 40rem; */
     justify-content: space-around;
     align-items: center;
     align-self: center;
@@ -54,6 +54,8 @@
 }
 
 .error p{
+    margin: 0;
+    margin-bottom: 6.2rem;
     font-family: 'Roboto', sans-serif;
     font-size: 22px;
     font-weight: 500;

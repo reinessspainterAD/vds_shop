@@ -28,6 +28,7 @@
     text-align: right;
     gap: 1rem;
     cursor: pointer;
+    margin-left: auto;
 }
 
 .usermenu h2{
@@ -57,14 +58,14 @@
 }
 
 .homeBtn{
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid white;
     background-color: transparent;
-    margin-left: auto;
+    margin-left: 1rem;
     margin-right: 1rem;
     border-radius: 50%;
 }

@@ -16,7 +16,7 @@ const DropDowsnMenuD = () =>{
     return(
         <div className={styles.dropDownMenu}>
             <ul className={styles.ul}>
-                <li onClick={() => {navigate('/')}}>
+                <li onClick={() => {navigate('/settings')}}>
                     <img src={settings} alt="" />
                     Настройки
                 </li>

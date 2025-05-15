@@ -1,11 +1,14 @@
 import styles from './SignUp.module.css'
 import LogoText from '../../components/HeaderGroup/LogoTextRow/LogoText.jsx'
+import convertToBase64 from '../../api/convertToBase64.js'
+import account from '../../assets/account.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import clsx from 'clsx'
 
 function SignIn(){
     const navigation = useNavigate()
+    const [image, setImage] = useState('')
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -24,7 +27,8 @@ function SignIn(){
                 body: JSON.stringify({
                     name,
                     email,
-                    password
+                    password,
+                    image,
                 })
             })
             const data = await response.json()
@@ -51,6 +55,19 @@ function SignIn(){
             alert('Ошибка подключения к серверу');
         }
     }
+
+    function convertToBase64(e){
+        console.log(e)
+        const reader = new FileReader()
+        reader.readAsDataURL(e.target.files[0])
+        reader.onload = () => {
+            console.log('BASE64 IMAGE:', reader.result)
+            setImage(reader.result)
+        }
+        reader.onerror = error => {
+            console.error("Ошибка загрузки: ", error)
+        }
+    }
     return(
         <section className={styles.signUp}>
             <img className={styles.cloud1} src="src/assets/signcloud1.svg" alt="signcloud1" />
@@ -60,10 +77,30 @@ function SignIn(){
             <div className={styles.logoText}><LogoText /></div>
             <form className={styles.form} onSubmit={registerUser}>
                 <h2>Регистрация</h2>
-                <img src="src/assets/SignInLine.svg" alt="SignInLine" />
+                <img className={styles.line} src="src/assets/SignInLine.svg" alt="SignInLine" />
+
+                <div className={styles.profileImg}>
+                    {image === '' || image == null ? (
+                        <div className={styles.regImg}><img src={account} alt="default" className={styles.defaultImg}/></div>
+                    ) : (
+                        <div className={styles.regImg}><img src={image} alt="profileImg" /></div>
+                    )}
+
+                    <input 
+                        type="file"
+                        accept="image/*" 
+                        id="fileInput"
+                        onChange={convertToBase64}
+                        style={{ display: 'none' }}
+                    />
+
+                    <label htmlFor="fileInput" className={styles.uploadBtn}>
+                        Загрузить фото
+                    </label>
+                </div>
 
                 <div className={styles.name}>
-                    <img src="src/assets/userSign.svg" alt="userSign" />
+                    <img width={100} height={100} src="src/assets/userSign.svg" alt="userSign" />
                     <input
                         type="text"
                         placeholder="Ваше имя"

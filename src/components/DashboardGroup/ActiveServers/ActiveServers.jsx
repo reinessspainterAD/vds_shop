@@ -1,6 +1,7 @@
 import styles from './ActiveServers.module.css'
 import { useEffect, useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+import errorpng from '../../../assets/errorNoData.svg'
 
 import {
     LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid
@@ -89,7 +90,7 @@ function ActiveServers(){
                 fetchGraphData(vmid);
 
                 const statusInt = setInterval(() => fetchStatus(vmid), 1000);
-                const graphInt = setInterval(() => fetchGraphData(vmid), 2000);
+                const graphInt = setInterval(() => fetchGraphData(vmid), 10000);
 
                 intervalRef.current[vmid] = statusInt;
                 graphIntervalRef.current[vmid] = graphInt;
@@ -267,6 +268,12 @@ function ActiveServers(){
             Object.values(timers).forEach(clearTimeout);
         };
     }, [servers]);
+
+    if (servers.length === 0) return <div className={styles.error}>
+            <img src={errorpng} alt="error" />    
+            <h2>Нет активных серверов</h2>
+            <p>Для аренды сервера перейдите в конфигуратор</p>
+        </div>;
 
     return (
         <div className={styles.activeServers}>

@@ -32,8 +32,8 @@ const Configurator = () => {
   const [vmid] = useState(generateVMID);
 
 
-  const corePrice = 200; // Цена за ядро
-  const ramPrice = 100;  // Цена за ГБ RAM
+  const corePrice = 50; // Цена за ядро
+  const ramPrice = 25;  // Цена за ГБ RAM
   const storagePrice = storageType === 'SSD' ? 2 : 1;
 
   const basePrice = (
@@ -45,9 +45,9 @@ const Configurator = () => {
   const totalPrice = (basePrice * days).toFixed(2);
 
   const osOptions = [
-    { name: "Debian 12", template: "debian-12-standard_12.7-1_amd64.tar.zst", price: 200 },
-    { name: "Ubuntu 24.04", template: "ubuntu-24.04-standard_24.04-2_amd64.tar.zst", price: 200 },
-    { name: "CentOS 9", template: "centos-9-stream-default_20240828_amd64.tar.xz", price: 1000 }
+    { name: "Debian 12", template: "debian-12-standard_12.7-1_amd64.tar.zst", price: 100 },
+    { name: "Ubuntu 24.04", template: "ubuntu-24.04-standard_24.04-2_amd64.tar.zst", price: 100 },
+    { name: "CentOS 9", template: "centos-9-stream-default_20240828_amd64.tar.xz", price: 500 }
   ];
 
   const handleSubmit = async () => {
@@ -132,14 +132,14 @@ const Configurator = () => {
     <div className={styles.configurator}>
       <div className={styles.header}>
         <LogoTextRow />
-        <button className={styles.homeBtn}><img src={home} alt="home" onClick={() => {navigation('/dashboard')}}/></button>
         <div className={styles.usermenu} onClick={() => setOpenUserMenu((prev) => !prev)}>
           <div>
             <h2>{userData.name}</h2>
             <p>{userData.email}</p>
           </div>
-          <img src={userLogo} alt="userphoto" />  
+          <img src={userData.image} alt="userphoto" />  
         </div>
+        <button className={styles.homeBtn}><img src={home} alt="home" onClick={() => {navigation('/dashboard')}}/></button>
         {
           openUserMenu && <DropDowsnMenuD/>
         }
