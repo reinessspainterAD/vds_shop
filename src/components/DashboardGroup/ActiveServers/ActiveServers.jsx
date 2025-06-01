@@ -17,6 +17,7 @@ import restart from '../../../assets/restart.svg'
 import del from '../../../assets/delete.svg'
 import downArrow from '../../../assets/downArrow.png'
 import upArrow from '../../../assets/upArrow.png'
+import terminal from '../../../assets/terminal.png'
 
 function ActiveServers(){
     const [servers, setServers] = useState([]);
@@ -333,6 +334,10 @@ function ActiveServers(){
                                                 <strong>Осталось времени:</strong>{' '}
                                                 {formatTimeLeft(server.endDate)}
                                             </p>
+                                            <button className={styles.terminalBtn}>
+                                                <img src={terminal} alt="" />
+                                                Терминал
+                                            </button>
                                         </div>
                                         
                                         <div className={styles.graphs}>

@@ -294,7 +294,7 @@ const Configurator = () => {
           </ul>
           <h3>Цена за день: {basePrice.toFixed(2)} ₽</h3>
           <h3>Итого: {totalPrice} ₽</h3>
-          <button onClick={handleSubmit}>Добавить в корзину</button>
+          <button onClick={handleSubmit}>Взять в аренду</button>
         </div>
       </div>
     </div>

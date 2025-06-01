@@ -53,15 +53,8 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      {/* <Header />
-      <Body />
-      <Footer /> */}
-
-
-
     </section>
   )
-  
 }
 
 export default App
