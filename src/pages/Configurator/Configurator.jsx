@@ -88,14 +88,14 @@ const Configurator = () => {
       const result = await response.json()
       console.log(result)
       if(result.status === "ok"){
-        alert("Всё ок") // заменить на модальные окна
+        alert("Сервер взят в аренду, перенаправляем на страницу профиля") // заменить на модальные окна
         navigation('/dashboard')
       }else{
-        alert("Всё не ок")
+        alert("Пароль должен состоять из 5 или более символов")
       }
     }catch(e){
       console.error(e)
-      alert("Всё не ок")
+      alert("Ошибка на стороне сервера")
     }
   }
 
